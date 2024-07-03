@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if (User.IsInRole("Customer") || User.IsInRole("Administrator") || User.IsInRole("Librarian"))
+    {
+        <p>Welcome to the Library Managment Application!</p>
+    }
+    else
+    {
+        <p>Start by registering or logging in</p>
+    }
+</div>
